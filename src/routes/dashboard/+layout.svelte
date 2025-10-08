@@ -13,7 +13,9 @@
 
 <div class="flex min-h-screen">
   <!-- Sidebar -->
-  <aside class="w-64 bg-neutral-50 p-6 flex flex-col justify-between">
+  <aside
+    class="w-64 bg-neutral-50 p-6 flex flex-col justify-between h-screen fixed"
+  >
     <div>
       <!--Company Logo-->
       <div class="flex items-center gap-2 mb-10">
@@ -51,7 +53,7 @@
         <a
           href="/dashboard/mixing"
           class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors
-      {$page.url.pathname === 'dashboard/mixing'
+      {$page.url.pathname === '/dashboard/mixing'
             ? 'bg-gray-400 text-white'
             : 'text-gray-500 hover:bg-gray-200'}"
         >

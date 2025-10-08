@@ -71,7 +71,7 @@
           {#if password}
             <button
               type="button"
-              class="absolute right-3 top-1/2 -translate-y-1/2 text-primary/70 dark:text-white/70 hover:text-primary dark:hover:text-white"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:cursor-pointer"
               on:click={() => (showPassword = !showPassword)}
             >
               {#if showPassword}

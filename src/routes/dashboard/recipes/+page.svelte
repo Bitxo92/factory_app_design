@@ -89,7 +89,7 @@
   }
 </script>
 
-<main class="flex flex-1 justify-center py-12 bg-white min-h-screen">
+<main class="flex flex-1 justify-center py-12 bg-white min-h-screen ml-64">
   <div class="w-full max-w-4xl px-4">
     <div class="mb-12 text-center">
       <h2 class="text-3xl font-bold text-black">Crear Nueva Receta</h2>

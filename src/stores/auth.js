@@ -1,26 +1,41 @@
+// src/lib/stores/user.js
 import { writable } from "svelte/store";
 import { browser } from "$app/environment";
 
-// Initialize store with value from localStorage if available
-const storedUser = browser ? localStorage.getItem("user") : null;
-export const user = writable(storedUser ? JSON.parse(storedUser) : null);
+function createUserStore() {
+  let initialValue = null;
 
-// Subscribe to user changes and update localStorage
-if (browser) {
-  user.subscribe((value) => {
-    if (value) {
-      localStorage.setItem("user", JSON.stringify(value));
-    } else {
+  if (browser) {
+    try {
+      const stored = localStorage.getItem("user");
+      if (stored) initialValue = JSON.parse(stored);
+    } catch (err) {
+      console.error("Failed to parse user from localStorage", err);
       localStorage.removeItem("user");
     }
-  });
+  }
+
+  const store = writable(initialValue);
+
+  if (browser) {
+    store.subscribe((value) => {
+      if (value) {
+        localStorage.setItem("user", JSON.stringify(value));
+      } else {
+        localStorage.removeItem("user");
+      }
+    });
+  }
+
+  return store;
 }
+
+export const user = createUserStore();
 
 export const login = (
   /** @type {string} */ username,
   /** @type {string} */ password
 ) => {
-  // Hardcoded credentials
   if (username === "Carlos" && password === "abc123.") {
     const userData = { username: "Carlos", name: "Carlos" };
     user.set(userData);

@@ -308,7 +308,7 @@
         <button
           type="button"
           on:click={prevStep}
-          class="flex h-12 min-w-32 items-center justify-center rounded-lg border border-gray-400 bg-gray-200 px-6 text-sm font-bold text-black/60 hover:bg-gray-300 disabled:opacity-50"
+          class="flex h-12 min-w-32 items-center justify-center rounded-lg border border-gray-400 bg-gray-200 px-6 text-sm font-bold text-black/60 hover:bg-gray-300 disabled:opacity-50 hover:cursor-pointer"
           disabled={currentStep === 1}
         >
           Atrás
@@ -317,14 +317,14 @@
           <button
             type="button"
             on:click={nextStep}
-            class="flex h-12 min-w-32 items-center justify-center rounded-lg bg-gray-700 px-6 text-sm font-bold text-white hover:opacity-80"
+            class="flex h-12 min-w-32 items-center justify-center rounded-lg bg-gray-700 px-6 text-sm font-bold text-white hover:opacity-80 hover:cursor-pointer"
           >
             Siguiente
           </button>
         {:else}
           <button
             type="submit"
-            class="flex h-12 min-w-32 items-center justify-center rounded-lg bg-green-600 px-6 text-sm font-bold text-white hover:opacity-80"
+            class="flex h-12 min-w-32 items-center justify-center rounded-lg bg-green-600 px-6 text-sm font-bold text-white hover:opacity-80 hover:cursor-pointer"
           >
             Confirmar
           </button>

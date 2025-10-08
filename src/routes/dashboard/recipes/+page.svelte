@@ -1,8 +1,11 @@
 <script lang="ts">
   import { fly, fade } from "svelte/transition";
+  import success from "$lib/assets/success.png";
 
   let currentStep = 1;
   const totalSteps = 5;
+
+  let showSuccessModal = false;
 
   // Datos del formulario
   let recetaSeleccionada = "";
@@ -38,6 +41,11 @@
 
   // Revisión / ID
   let recetaId = "";
+
+  function confirmRecipe(event: Event) {
+    event.preventDefault(); // prevent actual form submission
+    showSuccessModal = true;
+  }
 
   // Validaciones básicas por paso
   function canProceed() {
@@ -324,6 +332,7 @@
         {:else}
           <button
             type="submit"
+            on:click={confirmRecipe}
             class="flex h-12 min-w-32 items-center justify-center rounded-lg bg-green-600 px-6 text-sm font-bold text-white hover:opacity-80 hover:cursor-pointer"
           >
             Confirmar
@@ -331,5 +340,28 @@
         {/if}
       </div>
     </form>
+    {#if showSuccessModal}
+      <div
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+        transition:fade
+      >
+        <div
+          class="bg-white rounded-xl p-8 flex flex-col items-center space-y-4 max-w-sm"
+          transition:fly={{ y: -20, duration: 300 }}
+        >
+          <img src={success} alt="Success" class="w-24 h-24" />
+          <p class="text-lg font-bold text-black">Receta creada con éxito</p>
+          <button
+            class="mt-4 bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-800 hover:cursor-pointer"
+            on:click={() => {
+              showSuccessModal = false;
+              location.reload();
+            }}
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    {/if}
   </div>
 </main>

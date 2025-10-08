@@ -105,7 +105,7 @@
       </p>
     </header>
 
-    <div class="bg-gray-400 p-6 rounded-xl shadow-lg space-y-8">
+    <div class="bg-gray-100 p-6 rounded-xl shadow-lg space-y-8">
       {#each lotes as lote, index}
         <div
           class="relative space-y-6 border-b border-gray-300 last:border-b-0 pb-6 text-center"

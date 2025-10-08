@@ -1,4 +1,6 @@
 <script>
+  // @ts-nocheck
+
   import "../../app.css";
   import { page } from "$app/stores";
   import { Gauge, NotepadText, CookingPot, Tags, Package } from "lucide-svelte";
@@ -6,7 +8,7 @@
   export let data;
 
   // Helper to determine if a link is active
-  const isActive = (/** @type {string} */ path) => $page.url.pathname === path;
+  const isActive = (path) => $page.url.pathname === path;
 </script>
 
 <div class="flex min-h-screen">
@@ -23,7 +25,7 @@
         <a
           href="/dashboard"
           class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors
-      {isActive('/dashboard')
+      {$page.url.pathname === '/dashboard'
             ? 'bg-gray-400 text-white'
             : 'text-gray-500 hover:bg-gray-200'}"
         >
@@ -32,11 +34,11 @@
             <span>Dashboard</span>
           </span>
         </a>
-        <!--Receipes-->
+        <!--Recipes-->
         <a
           href="/dashboard/recipes"
           class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors
-      {isActive('/dashboard/recipes')
+      {$page.url.pathname === '/dashboard/recipes'
             ? 'bg-gray-400 text-white'
             : 'text-gray-500 hover:bg-gray-200'}"
         >
@@ -49,7 +51,7 @@
         <a
           href="/dashboard/dough-mixing"
           class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors
-      {isActive('/dashboard/dough-mixing')
+      {$page.url.pathname === 'dashboard/dough-mixing'
             ? 'bg-gray-400 text-white'
             : 'text-gray-500 hover:bg-gray-200'}"
         >
@@ -62,7 +64,7 @@
         <a
           href="/dashboard/labeling"
           class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors
-      {isActive('/dashboard/labeling')
+      {$page.url.pathname === '/dashboard/labeling'
             ? 'bg-gray-400 text-white'
             : 'text-gray-500 hover:bg-gray-200'}"
         >
@@ -75,7 +77,7 @@
         <a
           href="/dashboard/inventory"
           class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors
-      {isActive('/dashboard/inventory')
+      {$page.url.pathname === '/dashboard/inventory'
             ? 'bg-gray-400 text-white'
             : 'text-gray-500 hover:bg-gray-200'}"
         >

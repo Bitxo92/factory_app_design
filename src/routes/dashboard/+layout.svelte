@@ -49,9 +49,9 @@
         </a>
         <!--Mixing-->
         <a
-          href="/dashboard/dough-mixing"
+          href="/dashboard/mixing"
           class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors
-      {$page.url.pathname === 'dashboard/dough-mixing'
+      {$page.url.pathname === 'dashboard/mixing'
             ? 'bg-gray-400 text-white'
             : 'text-gray-500 hover:bg-gray-200'}"
         >

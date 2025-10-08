@@ -1,17 +1,20 @@
 <script>
-  import { login } from "../../stores/auth";
   import { goto } from "$app/navigation";
   import logo from "$lib/assets/logo.png";
+  import "../../app.css";
+  import { Eye, EyeOff } from "lucide-svelte";
 
   let username = "";
   let password = "";
   let error = "";
   let showModal = false;
+  let showPassword = false;
 
   const handleLogin = () => {
     error = "";
 
-    if (login(username, password)) {
+    // Check hardcoded credentials
+    if (username === "Carlos" && password === "abc123") {
       goto("/dashboard");
     } else {
       error = "Invalid credentials.";
@@ -27,8 +30,9 @@
       class="flex flex-col items-center justify-center gap-3 mb-8 text-center"
     >
       <div class="flex items-center justify-center gap-3 mb-8"></div>
-
+      <!--Company Logo-->
       <img src={logo} alt="Company logo" class="w-50 h-auto mt-2" />
+      <!--Login Form Header-->
       <h2
         class="text-3xl font-bold text-background-dark dark:text-background-light"
       >
@@ -54,21 +58,29 @@
             placeholder="Enter your username"
           />
         </div>
-        <div>
-          <label
-            for="password"
-            class="block text-sm font-medium text-background-dark/80 dark:text-background-light/80 mb-2"
-          >
-            Password
-          </label>
+        <div class="relative">
           <input
             id="password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             bind:value={password}
             required
-            class="w-full rounded-lg border border-primary/30 bg-background-light p-3 text-background-dark focus:border-primary focus:ring-primary dark:border-primary/50 dark:bg-background-dark/50 dark:text-background-light dark:focus:border-primary"
             placeholder="Enter your password"
+            class="w-full rounded-lg border border-primary/30 bg-background-light p-3 pr-10 text-background-dark focus:border-primary focus:ring-primary dark:border-primary/50 dark:bg-background-dark/50 dark:text-background-light dark:focus:border-primary"
           />
+
+          {#if password}
+            <button
+              type="button"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-primary/70 dark:text-white/70 hover:text-primary dark:hover:text-white"
+              on:click={() => (showPassword = !showPassword)}
+            >
+              {#if showPassword}
+                <EyeOff size={20} />
+              {:else}
+                <Eye size={20} />
+              {/if}
+            </button>
+          {/if}
         </div>
         <!-- Remember Me + Forgot Password -->
         <div class="flex items-center justify-between text-sm p-5">

@@ -2,7 +2,7 @@
   import { goto } from "$app/navigation";
   import logo from "$lib/assets/logo.png";
   import "../../app.css";
-  import { Eye, EyeOff } from "lucide-svelte";
+  import { Eye, EyeOff, UserRound, Lock } from "lucide-svelte";
 
   let username = "";
   let password = "";
@@ -45,8 +45,9 @@
         <div>
           <label
             for="username"
-            class="block text-sm font-medium text-background-dark/80 dark:text-background-light/80 mb-2"
+            class="flex items-center gap-2 text-sm font-medium text-background-dark/80 dark:text-background-light/80 mb-2"
           >
+            <UserRound class="w-5 h-5 ml-2 inline-block" />
             Username
           </label>
           <input
@@ -58,6 +59,12 @@
             placeholder="Enter your username"
           />
         </div>
+        <label
+          for="password"
+          class="block text-sm font-medium text-background-dark/80 dark:text-background-light/80 mb-2"
+          ><Lock class="w-5 h-auto ml-2 inline-block" />
+          Password
+        </label>
         <div class="relative">
           <input
             id="password"

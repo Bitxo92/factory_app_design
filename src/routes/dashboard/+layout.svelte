@@ -3,12 +3,23 @@
 
   import "../../app.css";
   import { page } from "$app/stores";
-  import { Gauge, NotepadText, CookingPot, Tags, Package } from "lucide-svelte";
+  import {
+    Gauge,
+    NotepadText,
+    CookingPot,
+    Tags,
+    Package,
+    LogOut,
+  } from "lucide-svelte";
+  import { goto } from "$app/navigation";
   import logo from "$lib/assets/logo.png";
   export let data;
 
   // Helper to determine if a link is active
   const isActive = (path) => $page.url.pathname === path;
+  const handleLogout = () => {
+    goto("/");
+  };
 </script>
 
 <div class="flex min-h-screen">
@@ -92,7 +103,7 @@
     </div>
 
     <!-- User Account info -->
-    <div class="flex items-center gap-4 p-3 bg-gray-400 rounded-lg">
+    <div class="relative flex items-center gap-4 p-3 bg-gray-400 rounded-lg">
       <img
         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfkSYOYrjcCFL05MsCdv0VIT4ouQkc0Thp3pUTnYhYXHmKTNxoWtdo8-4awXrnrQeDB9RYS1dEmZ4r1UXHcZ9mnQuQ9CARfn1MF8i5iimzVoGIvj-4VhpsST-Jl45IsfqTVWfnOkq_0Mef7OKm1UVA2xx0uSnZaXyPIpMANd3aQzKgA8_OJdBWlMpoMW1i2svIMtOAc0bCXLxY_YV3EGeNSeJd4qEvb50i1G_EY8bo3yWSBrQKWFoPnADJv5YsDsdo4oWz_OdFhDV8"
         alt="Operator"
@@ -102,6 +113,15 @@
         <p class="font-bold text-sm">Carlos Garcia</p>
         <p class="text-xs text-primary/70 dark:text-white/70">Operario</p>
       </div>
+
+      <!-- Logout -->
+      <button
+        on:click={handleLogout}
+        class="absolute bottom-2 right-2 p-1 rounded-full hover:bg-gray-500 transition hover:cursor-pointer"
+        title="Logout"
+      >
+        <LogOut class="w-4 h-4 text-white" />
+      </button>
     </div>
   </aside>
 

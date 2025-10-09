@@ -12,6 +12,7 @@
     Clock,
     Plus,
     Trash2,
+    Drumstick,
   } from "lucide-svelte";
   import { writable, get } from "svelte/store";
   let product: any;
@@ -630,7 +631,7 @@
                   <div
                     class="flex size-10 items-center justify-center rounded-full bg-blue-100 text-blue-600"
                   >
-                    <Egg class="w-5 h-5" />
+                    <Drumstick class="w-5 h-5" />
                   </div>
                   <div>
                     <p class="font-semibold text-gray-900">

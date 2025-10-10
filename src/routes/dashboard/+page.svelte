@@ -15,6 +15,8 @@
   } from "lucide-svelte";
   import type { Chart, ChartItem } from "chart.js";
 
+  //############################################## Mock DATA #####################################################
+
   // Datos del usuario
   const usuario = {
     nombre: "Carlos García",
@@ -100,7 +102,7 @@
   let chartEficiencia: Chart | null = null;
 
   onMount(async () => {
-    // Importar Chart.js dinámicamente para evitar problemas de SSR
+    // NOTE: Importar Chart.js dinámicamente para evitar problemas de SSR
     const ChartJS = await import("chart.js/auto");
     const Chart = ChartJS.default;
 
@@ -544,7 +546,7 @@
               <div class="flex gap-2 pt-4 border-t border-gray-200">
                 <button
                   on:click={() => startAmasadora(amasadora.id)}
-                  class="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium transition-colors hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  class="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium transition-colors hover:bg-blue-700 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={amasadora.estado === "en_progreso"}
                 >
                   <Play class="w-4 h-4" />
@@ -552,7 +554,7 @@
                 </button>
                 <button
                   on:click={() => pauseAmasadora(amasadora.id)}
-                  class="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-yellow-600 text-white text-sm font-medium transition-colors hover:bg-yellow-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  class="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-yellow-600 text-white text-sm font-medium transition-colors hover:bg-yellow-700 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={amasadora.estado !== "en_progreso"}
                 >
                   <Pause class="w-4 h-4" />
@@ -560,7 +562,7 @@
                 </button>
                 <button
                   on:click={() => stopAmasadora(amasadora.id)}
-                  class="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-600 text-white text-sm font-medium transition-colors hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  class="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-600 text-white text-sm font-medium transition-colors hover:bg-red-700 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={amasadora.estado === "detenido"}
                 >
                   <Square class="w-4 h-4" />

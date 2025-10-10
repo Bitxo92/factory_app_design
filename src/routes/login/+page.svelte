@@ -61,7 +61,7 @@
         </div>
         <label
           for="password"
-          class="block text-sm font-medium text-background-dark/80 dark:text-background-light/80 mb-2"
+          class="flex items-center gap-2 text-sm font-medium text-background-dark/80 dark:text-background-light/80 mb-2"
           ><Lock class="w-5 h-auto ml-2 inline-block" />
           Password
         </label>

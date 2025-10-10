@@ -1058,12 +1058,12 @@
         </div>
       {/if}
 
-      <!-- Botones de Navegación Mejorados -->
+      <!-- Botones de Navegación -->
       <div class="flex justify-between items-center pt-6">
         <button
           type="button"
           on:click={prevStep}
-          class="flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-8 py-4 font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-sm"
+          class="flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-8 py-4 font-semibold text-gray-700 hover:bg-gray-50 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-sm"
           disabled={currentStep === 1}
         >
           <svg
@@ -1086,7 +1086,7 @@
           <button
             type="button"
             on:click={resetForm}
-            class="rounded-xl border border-red-300 bg-white px-6 py-4 font-semibold text-red-600 hover:bg-red-50 transition-all duration-200 hover:shadow-sm"
+            class="rounded-xl border border-red-300 bg-white px-6 py-4 font-semibold text-red-600 hover:bg-red-50 transition-all duration-200 hover:shadow-sm hover:cursor-pointer"
           >
             Reiniciar
           </button>
@@ -1095,7 +1095,7 @@
             <button
               type="button"
               on:click={nextStep}
-              class="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition-all duration-200 hover:shadow-lg transform hover:scale-105"
+              class="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition-all duration-200 hover:shadow-lg transform hover:scale-105 hover:cursor-pointer"
             >
               Siguiente
               <svg
@@ -1115,7 +1115,7 @@
           {:else}
             <button
               type="submit"
-              class="flex items-center justify-center gap-2 rounded-xl bg-green-600 px-8 py-4 font-semibold text-white hover:bg-green-700 transition-all duration-200 hover:shadow-lg transform hover:scale-105"
+              class="flex items-center justify-center gap-2 rounded-xl bg-green-600 px-8 py-4 font-semibold text-white hover:bg-green-700 transition-all duration-200 hover:shadow-lg transform hover:scale-105 hover:cursor-pointer"
             >
               <svg
                 class="w-5 h-5"
@@ -1138,7 +1138,7 @@
     </form>
   </div>
 
-  <!-- Modal de Éxito Mejorado -->
+  <!-- Modal de Éxito -->
   {#if showSuccessModal}
     <div
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"

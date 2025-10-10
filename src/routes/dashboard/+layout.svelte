@@ -110,7 +110,7 @@
         class="w-10 h-10 rounded-full"
       />
       <div>
-        <p class="font-bold text-sm">Carlos Garcia</p>
+        <p class="font-bold text-sm">Carlos García</p>
         <p class="text-xs text-primary/70 dark:text-white/70">Operario</p>
       </div>
 

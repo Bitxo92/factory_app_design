@@ -353,7 +353,7 @@
           <div class="flex gap-2">
             <select
               bind:value={selectedCategory}
-              class="px-3 pr-8 py-2 min-w-[8rem] rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              class="px-3 pr-8 py-2 min-w-[8rem] rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent hover:cursor-pointer"
             >
               {#each categories as category}
                 <option value={category.value}>{category.label}</option>
@@ -376,13 +376,13 @@
         <!-- Acciones -->
         <div class="flex gap-2">
           <button
-            class="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+            class="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors hover: cursor-pointer"
           >
             <Plus class="w-4 h-4" />
             <span class="hidden sm:inline">Nuevo Producto</span>
           </button>
           <button
-            class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-colors"
+            class="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-colors hover: cursor-pointer"
           >
             <Download class="w-4 h-4" />
             <span class="hidden sm:inline">Exportar</span>
@@ -574,12 +574,12 @@
           >
           <div class="flex items-center gap-2">
             <button
-              class="px-3 py-1 rounded border border-gray-300 hover:bg-white"
+              class="px-3 py-1 rounded border border-gray-300 hover:bg-white hover: cursor-pointer"
               >Anterior</button
             >
             <span>Página 1 de 1</span>
             <button
-              class="px-3 py-1 rounded border border-gray-300 hover:bg-white"
+              class="px-3 py-1 rounded border border-gray-300 hover:bg-white hover:cursor-pointer"
               >Siguiente</button
             >
           </div>
@@ -629,26 +629,26 @@
         </h3>
         <div class="grid grid-cols-2 gap-4">
           <button
-            class="flex flex-col items-center gap-2 p-4 bg-blue-50 rounded-xl border border-blue-200 hover:bg-blue-100 transition-colors"
+            class="flex flex-col items-center gap-2 p-4 bg-blue-50 rounded-xl border border-blue-200 hover:bg-blue-100 transition-colors hover:cursor-pointer"
           >
             <Plus class="w-6 h-6 text-blue-600" />
             <span class="text-sm font-medium text-blue-900">Nuevo Producto</span
             >
           </button>
           <button
-            class="flex flex-col items-center gap-2 p-4 bg-green-50 rounded-xl border border-green-200 hover:bg-green-100 transition-colors"
+            class="flex flex-col items-center gap-2 p-4 bg-green-50 rounded-xl border border-green-200 hover:bg-green-100 transition-colors hover:cursor-pointer"
           >
             <Upload class="w-6 h-6 text-green-600" />
             <span class="text-sm font-medium text-green-900">Importar CSV</span>
           </button>
           <button
-            class="flex flex-col items-center gap-2 p-4 bg-purple-50 rounded-xl border border-purple-200 hover:bg-purple-100 transition-colors"
+            class="flex flex-col items-center gap-2 p-4 bg-purple-50 rounded-xl border border-purple-200 hover:bg-purple-100 transition-colors hover: cursor-pointer"
           >
             <BarChart3 class="w-6 h-6 text-purple-600" />
             <span class="text-sm font-medium text-purple-900">Reportes</span>
           </button>
           <button
-            class="flex flex-col items-center gap-2 p-4 bg-orange-50 rounded-xl border border-orange-200 hover:bg-orange-100 transition-colors"
+            class="flex flex-col items-center gap-2 p-4 bg-orange-50 rounded-xl border border-orange-200 hover:bg-orange-100 transition-colors hover: cursor-pointer"
           >
             <ShoppingCart class="w-6 h-6 text-orange-600" />
             <span class="text-sm font-medium text-orange-900">Pedidos</span>

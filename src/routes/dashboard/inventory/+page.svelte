@@ -577,7 +577,7 @@
               class="px-3 py-1 rounded border border-gray-300 hover:bg-white"
               >Anterior</button
             >
-            <span>Página 1 de 3</span>
+            <span>Página 1 de 1</span>
             <button
               class="px-3 py-1 rounded border border-gray-300 hover:bg-white"
               >Siguiente</button

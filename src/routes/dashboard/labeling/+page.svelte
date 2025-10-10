@@ -382,7 +382,7 @@
 
                 <div class="mt-4 flex gap-2">
                   <button
-                    class="flex items-center justify-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+                    class="flex items-center justify-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 hover:cursor-pointer"
                     on:click={simulateScaleReading}
                     disabled={!$isScaleConnected || $isReadingWeight}
                   >
@@ -391,7 +391,7 @@
                   </button>
 
                   <button
-                    class="flex items-center justify-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+                    class="flex items-center justify-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 hover:cursor-pointer"
                     on:click={() => weight.set("")}
                   >
                     <RotateCcw class="w-4 h-4" />
@@ -505,7 +505,7 @@
         <!-- Navigation Buttons -->
         <div class="mt-8 flex justify-between">
           <button
-            class="flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-50"
+            class="flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-50 hover:cursor-pointer"
             on:click={prevStep}
             disabled={$currentStep === 0}
           >
@@ -514,7 +514,7 @@
 
           <div class="flex gap-2">
             <button
-              class="flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50"
+              class="flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50 hover:cursor-pointer"
               on:click={resetProcess}
             >
               <RotateCcw class="w-4 h-4" />
@@ -522,7 +522,7 @@
             </button>
 
             <button
-              class="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
+              class="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 disabled:opacity-50 hover:cursor-pointer"
               on:click={nextStep}
               disabled={($currentStep === 0 &&
                 (!$weight || parseFloat($weight) <= 0)) ||
@@ -593,7 +593,7 @@
           </div>
         </div>
         <button
-          class="mt-2 w-full rounded-xl border border-red-300 bg-white px-6 py-3 font-semibold text-red-600 transition-colors hover:bg-red-50"
+          class="mt-2 w-full rounded-xl border border-red-300 bg-white px-6 py-3 font-semibold text-red-600 transition-colors hover:bg-red-50 hover:cursor-pointer"
           on:click={endBatch}
         >
           Terminar Lote Actual
@@ -659,7 +659,7 @@
 
           <div class="mt-4 pt-4 border-t border-gray-200">
             <button
-              class="flex w-full items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+              class="flex w-full items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:cursor-pointer"
               on:click={() => recentItems.set([])}
             >
               <Trash2 class="w-4 h-4" />
@@ -676,7 +676,7 @@
         </h3>
         <div class="grid grid-cols-2 gap-3">
           <button
-            class="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white p-4 transition-colors hover:bg-gray-50"
+            class="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white p-4 transition-colors hover:bg-gray-50 hover:cursor-pointer"
             on:click={resetProcess}
           >
             <RotateCcw class="w-6 h-6 text-gray-600" />
@@ -685,7 +685,7 @@
             >
           </button>
           <button
-            class="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white p-4 transition-colors hover:bg-gray-50"
+            class="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white p-4 transition-colors hover:bg-gray-50 hover:cursor-pointer"
             on:click={simulateScaleReading}
           >
             <Scale class="w-6 h-6 text-gray-600" />
